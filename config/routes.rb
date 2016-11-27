@@ -1,6 +1,9 @@
 Alfonsoapp::Application.routes.draw do
 
 
+  resources :subjects
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :posts
   get "scout", to: 'scout#index', as: 'scout'
   get "scout/new", as: 'new_scout'
   post "scout/create", as: 'create_scout'
